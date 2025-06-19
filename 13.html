@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipnetic - Premium Trading Course</title>
+
+  <!-- Preload Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f8;
+      color: #222;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    header {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+    }
+    .parallax-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 130%;
+      object-fit: cover;
+      z-index: 0;
+      transform: translateY(0);
+      transition: transform 0.1s ease-out;
+      filter: brightness(0.7) contrast(1.05);
+    }
+    .logo-overlay {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 30px;
+    }
+    .main-logo {
+      font-size: 3.6rem;
+      font-weight: 800;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s infinite;
+    }
+    @keyframes shine {
+      0% { text-shadow: 0 0 8px rgba(0,255,255,0.4); }
+      50% { text-shadow: 0 0 16px rgba(0,255,255,0.8); }
+      100% { text-shadow: 0 0 8px rgba(0,255,255,0.4); }
+    }
+
+    .tab-panel {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right, #ffffff, #f9f9f9);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    .tab-content {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      border: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    .tab-actions {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .tab-actions button {
+      padding: 0.9rem 1.6rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .next-btn {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .close-btn {
+      background: #ccc;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.postimg.cc/133FtMSk/file-00000000572461fbb22910c68fcd1933.png" alt="Pipnetic Banner" class="parallax-banner" loading="eager" fetchpriority="high">
+    <div class="logo-overlay">
+      <h1 class="main-logo">Pipnetic</h1>
+    </div>
+  </header>
+  
+  
+  <div class="description" style="text-align: center; max-width: 700px; margin: 2rem auto 3rem; font-size: 1.2rem; line-height: 1.8; color: #444; padding: 0 1.5rem;">
+    Welcome to <strong>Pipnetic</strong> — Your gateway to premium Crypto & Forex mastery. Learn from seasoned professionals with real-world experience.
+  </div>
+
+  <img loading="lazy" fetchpriority="low" class="background-preview" src="https://i.postimg.cc/pLs6xCz1/file-000000000328624384ce94e12adc290a.png" alt="Background Preview" style="width: 100%; height: auto; margin-top: 3rem; display: block; border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
+
+  <div class="bullets" style="max-width: 700px; margin: 2rem auto; padding: 0 1.5rem;">
+    <ul style="list-style-type: disc; padding-left: 1.5rem; color: #333;">
+      <li>Lifetime access with one-time ₹49 payment</li>
+      <li>Expert-guided trading knowledge</li>
+      <li>Crypto + Forex full strategy pack</li>
+      <li>Secure manual verification</li>
+      <li>24-hour course access window</li>
+      <li>Mobile & desktop friendly layout</li>
+      <li>Works without login/signup</li>
+      <li>Future updates included</li>
+      <li>Manual code unlock system</li>
+      <li>Admin verified user flow</li>
+    </ul>
+  </div>
+
+  <button class="purchase-btn" onclick="openTab('tab1')" style="display: block; margin: 3rem auto 5rem; padding: 1rem 2rem; background: #2c3e50; color: #fff; font-size: 1.1rem; border: none; border-radius: 10px; cursor: pointer; transition: background 0.3s ease; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
+    Purchase
+  </button>
+  
+  
+  <!-- Tab 1: Start Purchase -->
+  <div class="tab-panel" id="tab1">
+    <div class="tab-content">
+      <h2>🛒 Begin Your Journey with Pipnetic</h2>
+      <p>Take a screenshot after payment and DM us on Instagram for access.</p>
+      <a href="https://instagram.com/example" target="_blank">https://instagram.com/example</a>
+      <div class="tab-actions">
+        <button class="close-btn" onclick="closeTab('tab1')">Close</button>
+        <button class="next-btn" onclick="goTo('tab1','tab2')">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: Payment Method -->
+  <div class="tab-panel" id="tab2">
+    <div class="tab-content">
+      <h2>💳 Step 2: Make a Payment</h2>
+      <p>The one-time course fee is <strong>₹49.00</strong>.</p>
+      <button class="next-btn" onclick="document.getElementById('upiBox').style.display='block';">📎 Show UPI ID</button>
+      <div id="upiBox" style="display:none; margin-top:1rem; background:#eef2f5; padding:1rem; border-radius:10px;">
+        <strong>UPI ID:</strong> 9883708691@fam
+      </div>
+      <button class="next-btn" onclick="document.getElementById('qrBox').style.display='block';" style="margin-top:1rem;">📷 Show QR Code</button>
+      <div id="qrBox" style="display:none; margin-top:1rem; background:#eef2f5; padding:1rem; border-radius:10px;">
+        <img src="https://i.postimg.cc/1XnKhxDy/Screenshot-2025-0619-145149.png" alt="QR Code" style="width: 100%; max-width: 200px; border-radius: 10px;">
+      </div>
+      <div class="tab-actions" style="margin-top: 2rem;">
+        <button class="close-btn" onclick="goTo('tab2','tab1')">❌ Back</button>
+        <button class="next-btn" onclick="goTo('tab2','tab3')">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 3: Enter Verification Code -->
+  <div class="tab-panel" id="tab3">
+    <div class="tab-content">
+      <h2>🔐 Step 3: Enter Verification Code</h2>
+      <p>Paste the 1-time verification code you received via Instagram DM.</p>
+      <input type="text" id="verificationCode" placeholder="Enter Code Here" style="padding: 0.8rem; width: 100%; margin: 1.5rem 0; border-radius: 8px; border: 1px solid #ccc; font-size: 1.1rem;">
+      <div class="tab-actions">
+        <button class="close-btn" onclick="goTo('tab3','tab2')">❌ Back</button>
+        <button class="next-btn" onclick="verifyCode()">Verify</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 4: Access Granted -->
+  <div class="tab-panel" id="tab4">
+    <div class="tab-content" style="text-align:center;">
+      <h2 style="color: #27ae60; font-size: 2rem;">✅ Verification Successful</h2>
+      <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Your access to Pipnetic's premium trading course has been unlocked.</p>
+      <p style="font-size: 1rem;">📂 <strong>Google Drive Link:</strong></p>
+      <a id="driveLink" href="#" target="_blank" style="word-break: break-all;">Loading...</a>
+      <div class="tab-actions" style="margin-top:2rem; justify-content: center;">
+        <button class="close-btn" onclick="closeTab('tab4')">Close</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script>
+    // 🔄 Parallax effect on scroll
+    window.addEventListener('scroll', () => {
+      const banner = document.querySelector('.parallax-banner');
+      const scrollY = window.scrollY;
+      banner.style.transform = `translateY(${scrollY * 0.3}px)`;
+    });
+
+    // 🔁 Tab control functions
+    function openTab(id) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function closeTab(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    function goTo(from, to) {
+      closeTab(from);
+      openTab(to);
+    }
+
+    // ✅ Verification
+    function verifyCode() {
+      const input = document.getElementById("verificationCode").value.trim();
+      const code = "pipnetic2025";
+      if (input === code) {
+        localStorage.setItem("pipnetic_verified", "true");
+        const secretDriveLink = "https://drive.google.com/folderview?id=10SGsyoXLpZ2RAPNK4UI3qsyiWiObcHek";
+        localStorage.setItem("drive_link", secretDriveLink);
+        goTo("tab3", "tab4");
+
+        document.getElementById("driveLink").href = secretDriveLink;
+        document.getElementById("driveLink").innerText = secretDriveLink;
+      } else {
+        alert("❌ Incorrect code. Please check your DM and try again.");
+      }
+    }
+
+    // 🚀 Auto-unlock if already verified
+    window.onload = function () {
+      if (localStorage.getItem("pipnetic_verified") === "true") {
+        openTab("tab4");
+        const link = localStorage.getItem("drive_link");
+        document.getElementById("driveLink").href = link;
+        document.getElementById("driveLink").innerText = link;
+      }
+    }
+  </script>
+</body>
+</html>
